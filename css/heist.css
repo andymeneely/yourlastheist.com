@@ -1,10 +1,3 @@
-@font-face{
-	font-family: 'Acknowledgement';
-	src: url('acknowledgement.eot');
-	src: url('acknowledgement.eot?#iefix') format('embedded-opentype'),
-	     url('acknowledgement.woff') format('woff'),
-}
-
 body {
   /*font-size: 16px;*/
   font-family: 'Archivo Narrow', sans-serif;
@@ -15,23 +8,8 @@ body {
 }
 
 .navbar-brand{
-  font-family: 'Acknowledgement', sans-serif;
-  font-weight: normal;
-  line-height: 0.9;
-  text-shadow: none;
-  letter-spacing: 0.75px;
   padding-top: 8px;
-  /*font-family: 'Alfa Slab One', sans-serif;*/
 }
-
-.navbar-brand .your{
-  font-size: 13px;
+.navbar-brand img{
+  width: 110px;
 }
-
-.navbar-brand .heist{
-  font-size: 26px;
-}
-
-/*.navbar{
-  min-height: 60px;
-}*/
