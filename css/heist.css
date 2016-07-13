@@ -3,6 +3,28 @@ body {
   font-family: 'Archivo Narrow', sans-serif;
 }
 
-.navbar-brand{
-  font-family: 'Alfa Slab One', sans-serif;
+.navbar{
+  font-size: 16px;
 }
+
+.navbar-brand{
+  font-family: 'Acknowledgement', sans-serif;
+  font-weight: normal;
+  line-height: 0.9;
+  text-shadow: none;
+  letter-spacing: 0.75px;
+  padding-top: 8px;
+  /*font-family: 'Alfa Slab One', sans-serif;*/
+}
+
+.navbar-brand .your{
+  font-size: 13px;
+}
+
+.navbar-brand .heist{
+  font-size: 26px;
+}
+
+/*.navbar{
+  min-height: 60px;
+}*/
