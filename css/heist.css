@@ -1,3 +1,10 @@
+@font-face{
+	font-family: 'Acknowledgement';
+	src: url('acknowledgement.eot');
+	src: url('acknowledgement.eot?#iefix') format('embedded-opentype'),
+	     url('acknowledgement.woff') format('woff'),
+}
+
 body {
   /*font-size: 16px;*/
   font-family: 'Archivo Narrow', sans-serif;
