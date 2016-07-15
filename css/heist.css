@@ -1,6 +1,7 @@
 body {
-  font-size: 16px;
+  font-size: 18px;
   font-family: 'Archivo Narrow', sans-serif;
+  line-height: 1.2;
 }
 
 .navbar{
@@ -26,11 +27,27 @@ body {
 
 h2{
   font-family: 'Archivo Black', sans-serif;
-  font-size: 26px;
+  font-size: 36px;
 }
 
-.vcenter{
-  height: 100%;
-  display: inline-block;
-  vertical-align: middle;
+.col-fat{
+  margin-top: 6%;
+  margin-bottom: 6%;
 }
+
+.col-chunky{
+  margin-top: 4%;
+  margin-bottom: 4%;
+}
+
+.marketing hr{
+  border: none;
+}
+
+footer{
+  margin-top: 400px;
+}
+
+/*.marketing p{
+  line-height: inherit;
+}*/
