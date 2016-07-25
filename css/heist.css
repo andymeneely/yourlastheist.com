@@ -47,7 +47,16 @@ h2{
 }
 
 footer{
-  margin-top: 400px;
+  margin-top: 200px;
+}
+
+.btn h3{
+  margin-top: 10px;
+}
+
+.call-to-action{
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 /*.marketing p{
