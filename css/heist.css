@@ -59,6 +59,10 @@ footer{
   margin-bottom: 10px;
 }
 
+.heist-buttons a{
+  min-width: 100%;
+}
+
 /*.marketing p{
   line-height: inherit;
 }*/
