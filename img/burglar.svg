@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="100"
+   height="400"
+   viewBox="0 0 100 400"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.92.0 r15299"
+   sodipodi:docname="burglar.svg">
+  <defs
+     id="defs4" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="1.4"
+     inkscape:cx="-3.8601586"
+     inkscape:cy="292.88128"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     units="px"
+     inkscape:window-width="1920"
+     inkscape:window-height="1017"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     showguides="false"
+     inkscape:guide-bbox="true">
+    <sodipodi:guide
+       position="-1008.5714,760"
+       orientation="0,1"
+       id="guide4139"
+       inkscape:label=""
+       inkscape:color="rgb(0,0,255)"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="-760.00001,260"
+       orientation="0,1"
+       id="guide4141"
+       inkscape:label=""
+       inkscape:color="rgb(0,0,255)"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="75.000001,517.14286"
+       orientation="1,0"
+       id="guide4143"
+       inkscape:label=""
+       inkscape:color="rgb(0,0,255)"
+       inkscape:locked="false" />
+  </sodipodi:namedview>
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(0,-727.36216)">
+    <path
+       style="fill:#4d4d4d;fill-opacity:1;stroke-width:0.99999994"
+       d="m 22.20458,989.54165 c -10.333187,-0.8534 -7.858824,-2.3105 -9.003229,-26.6092 C 10.370933,902.8355 6.9098693,869.79467 10.31421,862.5816 c 2.209365,-4.68118 0.872358,-5.44209 -2.0370486,-9.31016 -11.2247917,-14.92337 -11.4848099,-16.23024 -5.1871985,-26.07112 2.24208,-3.50357 7.0291671,-10.23982 6.6705803,-13.51023 -0.2340091,-2.13417 1.3456238,-4.20667 4.4052498,-7.19191 0.964045,-0.94059 2.382371,-3.69866 3.102972,-7.88804 0.456774,-2.65555 0.259577,-6.25982 0.682314,-9.14714 2.099299,-14.33844 3.219439,-17.08527 8.207614,-20.12675 5.969025,-3.63954 11.736182,-2.00897 16.797792,3.98345 2.295564,2.71772 4.446004,6.33259 6.40435,10.75991 1.849092,4.18032 1.378079,9.99542 5.063215,15.40025 l 7.206979,10.57017 c 2.969899,3.21697 0.325757,16.3401 0,24.50039 l -1.176309,29.46655 c -0.111963,2.80473 -0.698574,9.24973 -1.022159,14.33398 -0.832085,3.72835 -0.504621,12.96475 -3.668585,16.5453 -1.482667,1.67788 -3.175489,2.67366 -4.790526,1.11784 l 1.306931,12.61958 c 0.534677,5.16281 1.512507,10.75688 2.368748,12.41266 0.856229,1.65579 4.187236,5.29832 7.402231,8.09462 5.806709,5.0505 12.979818,13.8208 18.530962,24.6096 1.992312,3.8722 4.529681,7.4719 6.822455,6.8177 2.864513,-0.8174 8.650314,7.788 11.919506,13.2284 0.373228,0.6211 -2.238937,0.1181 -1.901008,0.7095 1.369407,2.3969 3.006665,5.1182 3.016055,6.3603 0.0229,3.0129 -4.587783,8.1603 -7.309442,8.1603 -1.597023,0 -1.844695,-1.0924 -2.966731,-3.457 -0.869935,-1.8332 -1.581694,-3.715 -1.581694,-4.1819 0,-0.4668 -1.907709,-3.0461 -4.239349,-5.7319 -2.331633,-2.6858 -5.457039,-7.1403 -6.945332,-9.8988 -2.820399,-5.2275 -24.07977,-27.3251 -26.288667,-27.3251 -1.31769,0 -1.42851,19.6293 -0.217848,38.5869 l 0.586652,9.1863 -2.763073,-0.5517 c -1.519688,-0.3035 -4.262621,-1.6004 -5.792908,-1.9746 -2.515244,-0.6151 -3.7433,0.039 -3.470241,2.1506 0.166133,1.2847 1.196393,3.1347 0.776907,3.8084 -0.960692,1.5432 -12.222601,0.3173 -18.023024,-0.096 z M 52.031466,867.62596 51.581114,834.88868 c -0.012,-0.87303 -1.627175,0.19071 -2.867082,2.2944 -3.278857,5.56307 -4.19968,9.26074 -3.181383,12.77518 0.511948,1.76685 1.374549,6.07902 1.916878,9.58258 1.508436,9.7446 2.013138,11.76019 2.944771,11.76019 0.471767,0 1.665592,-1.60901 1.637168,-3.67507 z m -37.49143,-24.66412 c 0.305498,-0.49432 0.826072,-2.87314 1.15683,-5.28629 0.521376,-3.80389 -1.884229,-3.9745 -3.566994,-4.50858 -4.8153996,-1.52836 -5.1820663,2.45041 -2.4942821,7.64802 1.5356591,2.96961 3.7869041,3.95506 4.9044461,2.14685 z"
+       id="path2996"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="csssssssssssscsscscssssssscssssssscssscccssssssssssss"
+       inkscape:export-filename="G:\apmeneel\Documents\Board Games\Masters of the Heist\decks\svg\crew\png\con artist.png"
+       inkscape:export-xdpi="316.4415"
+       inkscape:export-ydpi="316.4415" />
+  </g>
+</svg>

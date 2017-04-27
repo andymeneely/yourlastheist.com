@@ -1,11 +1,22 @@
 body {
-  font-size: 18px;
+  font-size: 2.25em;
   font-family: 'Archivo Narrow', sans-serif;
   line-height: 1.2;
+  padding: 0;
+}
+
+h1{
+  font-family: 'Acknowledgement', 'Archivo Black', sans-serif;
+  font-size: 64px;
+  text-align: center;
 }
 
 .navbar{
-  font-size: 16px;
+  font-size: 1em;
+}
+
+.navbar a{
+  color: #747272;
 }
 
 .navbar-brand{
@@ -16,28 +27,42 @@ body {
 }
 
 .frontpage{
-  background: url("/img/backdrop.png");
-  background-repeat: no-repeat;
-  /*background-attachment: fixed;*/
-  background-position: center;
+  background: none;
+  padding-top: 0;
+  padding-bottom: 0;
+  min-width: 100% ;
+  min-height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
-  max-width: 100% ;
-  min-height: 500px;
+.frontpage img {
+  flex-grow: 1;
+  transition: transform 0.25s;
+}
+
+.frontpage img:hover {
+  transform: scale(1.1);
+}
+
+.pagelogo {
+  margin: auto;
 }
 
 h2{
   font-family: 'Archivo Black', sans-serif;
-  font-size: 36px;
+  font-size: 1.6em;
 }
 
 .col-fat{
-  margin-top: 6%;
-  margin-bottom: 6%;
+  margin-top: 2%;
+  margin-bottom: 2%;
 }
 
 .col-chunky{
-  margin-top: 4%;
-  margin-bottom: 4%;
+  margin-top: 1%;
+  margin-bottom: 1%;
 }
 
 .marketing hr{
@@ -46,8 +71,17 @@ h2{
   margin-bottom: 70px;
 }
 
+.marketing img{
+  transition: transform 0.25s;
+}
+
+.marketing img:hover{
+  transform: scale(1.5);
+}
+
 footer{
   margin-top: 200px;
+  text-align: center;
 }
 
 .btn h3{
