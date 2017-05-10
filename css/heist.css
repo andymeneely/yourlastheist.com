@@ -11,6 +11,15 @@ h1{
   text-align: center;
 }
 
+#logo{
+  display: block;
+  text-indent: -9999px;
+  width: 100%;
+  min-height: 100px;
+  background: url('/img/logopage.svg') no-repeat;
+  background-size: 100%;
+}
+
 .navbar{
   font-size: 1em;
 }
@@ -37,13 +46,26 @@ h1{
   align-items: center;
 }
 
-.frontpage img {
+.frontpage svg {
   flex-grow: 1;
   transition: transform 0.25s;
 }
 
-.frontpage img:hover {
+.frontpage svg path {
+  fill: #282828 !important;
+}
+
+.frontpage svg text{
+  opacity: 0;
+}
+
+.frontpage svg:hover{
   transform: scale(1.1);
+}
+
+.frontpage svg:hover text{
+  opacity: 100%;
+  fill: #282828 !important;
 }
 
 h2{
@@ -72,7 +94,7 @@ h2{
 }
 
 .marketing img:hover{
-  transform: scale(1.5);
+  transform: scale(1.3);
 }
 
 footer{
