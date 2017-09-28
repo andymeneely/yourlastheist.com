@@ -115,6 +115,19 @@ footer{
   min-width: 100%;
 }
 
+.maker img{
+  width:100%;
+  transition: transform 0.75s;
+}
+
+.maker img:hover{
+  transform: scale(1.1);
+}
+
+.maker_well{
+  margin-top: 0.5em;
+}
+
 /*.marketing p{
   line-height: inherit;
 }*/
