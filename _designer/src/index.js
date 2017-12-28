@@ -1,78 +1,103 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { HexGrid, Layout, Hexagon, GridGenerator, Text, Pattern } from 'react-hexgrid';
 import './index.css';
 
-function Square(props) {
-  return (
-    <button className="square" onClick={props.onClick}>
-      {props.value}
-    </button>
-  );
-}
-
-class Board extends React.Component {
+class TextMap extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      squares: Array(9).fill(null),
-      xIsNext: true,
+      value: 'Please write an essay about your favorite DOM element.'
+    };
+
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  handleChange(event) {
+    this.setState({value: event.target.value});
+  }
+
+  handleSubmit(event) {
+    alert('An essay was submitted: ' + this.state.value);
+    event.preventDefault();
+  }
+
+  render() {
+    return (
+      <textarea
+        value={this.state.value}
+        onChange={this.handleChange}
+      />
+    );
+  }
+}
+
+class ScenarioMap extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      hexagons: GridGenerator.rectangle(10,10),
+      tiles: Array(100).fill(false),
     };
   }
 
   handleClick(i) {
-    const squares = this.state.squares.slice();
-    squares[i] = this.state.xIsNext ? 'X' : 'O';
+    alert('hello!');
+    const tiles = this.state.tiles.slice();
+    tiles[i] = !tiles[i];
     this.setState({
-      squares: squares,
-      xIsNext: !this.state.xIsNext,
+      tiles: tiles,
     });
   }
 
-  renderSquare(i) {
+  renderHexagon(hex, i) {
     return (
-      <Square
-        value={this.state.squares[i]}
+      <Hexagon
+        key={i}
+        // fill="favicon"
+        className="hex-blank"
+        q={hex.q}
+        r={hex.r}
+        s={hex.s}
+        value={i}
         onClick={() => this.handleClick(i)}
-      />
+      >
+      </Hexagon>
     );
   }
 
   render() {
-    const status = 'Next player: ' + (this.state.xIsNext ? 'X' : 'O');
-
     return (
-      <div>
-        <div className="status">{status}</div>
-        <div className="board-row">
-          {this.renderSquare(0)}
-          {this.renderSquare(1)}
-          {this.renderSquare(2)}
-        </div>
-        <div className="board-row">
-          {this.renderSquare(3)}
-          {this.renderSquare(4)}
-          {this.renderSquare(5)}
-        </div>
-        <div className="board-row">
-          {this.renderSquare(6)}
-          {this.renderSquare(7)}
-          {this.renderSquare(8)}
-        </div>
+      <div className="hexgrid">
+        <HexGrid
+          width={600} height={600}
+          viewBox="-70 -70 400 400"
+          >
+          <Layout
+            size={{ x: 16, y: 16 }}
+            spacing={1.02}
+            flat={false}
+            origin={{x: 0, y: 0}}
+            >
+            { this.state.hexagons.map((hex, i) => this.renderHexagon(hex, i))}
+            <Pattern id="favicon" link="favicon.ico" />
+          </Layout>
+        </HexGrid>
       </div>
     );
   }
 }
 
-class Game extends React.Component {
+class Designer extends React.Component {
   render() {
     return (
-      <div className="game">
-        <div className="game-board">
-          <Board />
+      <div className="designer">
+        <div className="scenario-map">
+          <ScenarioMap />
         </div>
-        <div className="game-info">
-          <div>{/* status */}</div>
-          <ol>{/* TODO */}</ol>
+        <div className="schematic">
+          <TextMap />
         </div>
       </div>
     );
@@ -82,6 +107,6 @@ class Game extends React.Component {
 // ========================================
 
 ReactDOM.render(
-  <Game />,
+  <Designer />,
   document.getElementById('root')
 );
