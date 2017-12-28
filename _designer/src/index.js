@@ -43,7 +43,6 @@ class ScenarioMap extends React.Component {
   }
 
   handleClick(i) {
-    alert('hello!');
     const tiles = this.state.tiles.slice();
     tiles[i] = !tiles[i];
     this.setState({
@@ -55,8 +54,8 @@ class ScenarioMap extends React.Component {
     return (
       <Hexagon
         key={i}
-        // fill="favicon"
-        className="hex-blank"
+        fill="none"
+        className={this.state.tiles[i] ? "hex-blue" : "hex-red"}
         q={hex.q}
         r={hex.r}
         s={hex.s}

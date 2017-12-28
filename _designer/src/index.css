@@ -11,12 +11,18 @@ body {
   width: 60%;
 }
 
-
-
 .textmap{
 
 }
 
 .hexgrid{
   border: 1pt solid black;
+}
+
+.hex-blue polygon{
+  fill: blue;
+}
+
+.hex-red polygon{
+  fill: red;
 }
