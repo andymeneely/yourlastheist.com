@@ -1,15 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { HexGrid, Layout, Hexagon, GridGenerator, Text, Pattern } from 'react-hexgrid';
+import { HexGrid, Layout, Hexagon, GridGenerator, Pattern } from 'react-hexgrid';
 import './index.css';
+import tileTypes from './tileTypes';
 
 class TextMap extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      value: 'Please write an essay about your favorite DOM element.'
-    };
-
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -26,7 +23,7 @@ class TextMap extends React.Component {
   render() {
     return (
       <textarea
-        value={this.state.value}
+        value="Here is some stuff"
         onChange={this.handleChange}
       />
     );
@@ -38,13 +35,17 @@ class ScenarioMap extends React.Component {
     super(props);
     this.state = {
       hexagons: GridGenerator.rectangle(10,10),
-      tiles: Array(100).fill(false),
+      tiles: Array(100).fill('BL'),
     };
   }
 
   handleClick(i) {
     const tiles = this.state.tiles.slice();
-    tiles[i] = !tiles[i];
+    switch(tiles[i]){
+      case 'BL': tiles[i] = 'EM'; break;
+      case 'EM': tiles[i] = 'SC'; break;
+      default:   tiles[i] = 'BL';
+    }
     this.setState({
       tiles: tiles,
     });
@@ -55,7 +56,7 @@ class ScenarioMap extends React.Component {
       <Hexagon
         key={i}
         fill="none"
-        className={this.state.tiles[i] ? "hex-blue" : "hex-red"}
+        className={'hex-' + tileTypes[this.state.tiles[i]]}
         q={hex.q}
         r={hex.r}
         s={hex.s}
@@ -69,18 +70,16 @@ class ScenarioMap extends React.Component {
   render() {
     return (
       <div className="hexgrid">
-        <HexGrid
-          width={600} height={600}
-          viewBox="-70 -70 400 400"
-          >
-          <Layout
-            size={{ x: 16, y: 16 }}
-            spacing={1.02}
-            flat={false}
-            origin={{x: 0, y: 0}}
-            >
+        <HexGrid width={600}
+                 height={600}
+                 viewBox="-30 -30 350 350">
+          <Layout size={{ x: 16, y: 16 }}
+                  spacing={1.02}
+                  flat={false}
+                  origin={{x: 0, y: 0}}>
             { this.state.hexagons.map((hex, i) => this.renderHexagon(hex, i))}
             <Pattern id="favicon" link="favicon.ico" />
+            <Pattern id="security" link="hexart/security.svg" />
           </Layout>
         </HexGrid>
       </div>
@@ -89,6 +88,13 @@ class ScenarioMap extends React.Component {
 }
 
 class Designer extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      tiles: Array(100).fill(false),
+    };
+  }
+
   render() {
     return (
       <div className="designer">

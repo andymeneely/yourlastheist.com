@@ -19,10 +19,84 @@ body {
   border: 1pt solid black;
 }
 
-.hex-blue polygon{
-  fill: blue;
+.hexagon polygon{
+  fill: #000;
+  stroke: #ccc;
+  fill-opacity:1;
+  stroke-width: 0.2pt;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+  stroke-miterlimit:4;
+  stroke-dasharray:none;
+  stroke-dashoffset:0;
+  stroke-opacity:1;
+  pointer-events: all;
+  cursor: pointer;
 }
 
-.hex-red polygon{
-  fill: red;
+.hexagon polygon:hover{
+  stroke: #c00;
+}
+
+.hex-blank polygon{
+  fill: #fff;
+}
+
+.hex-empty polygon{
+}
+
+.hex-security polygon{
+  fill: #00f
+}
+
+.hex-security-guard polygon{
+}
+
+.hex-security-lock polygon{
+}
+
+.hex-security-camera polygon{
+}
+
+.hex-jewel polygon{
+}
+
+.hex-1k polygon{
+}
+
+.hex-2k polygon{
+}
+
+.hex-3k polygon{
+}
+
+.hex-reinforcements polygon{
+}
+
+.hex-gate-a polygon{
+}
+
+.hex-gate-b polygon{
+}
+
+.hex-gate-c polygon{
+}
+
+.hex-gate-d polygon{
+}
+
+.hex-entrance-upper-right polygon{
+}
+
+.hex-entrance-upper-left polygon{
+}
+
+.hex-entrance-lower-left polygon{
+}
+
+.hex-entrance-lower-right polygon{
+}
+
+.hex-watchtower{
+
 }

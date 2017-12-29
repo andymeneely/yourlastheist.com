@@ -1,0 +1,22 @@
+{
+  "BL" : "blank",
+  "EM" : "empty",
+  "SC" : "security",
+  "GU" : "security-guard",
+  "LO" : "security-lock",
+  "CM" : "security-camera",
+  "JW" : "jewel",
+  "$1" : "1k",
+  "$2" : "2k",
+  "$3" : "3k",
+  "RE" : "reinforcements",
+  "GA" : "gate-a",
+  "GB" : "gate-b",
+  "GC" : "gate-c",
+  "GD" : "gate-d",
+  "E1" : "entrance-upper-right",
+  "E2" : "entrance-upper-left",
+  "E3" : "entrance-lower-left",
+  "E4" : "entrance-lower-right",
+  "WT" : "watchtower"
+}
