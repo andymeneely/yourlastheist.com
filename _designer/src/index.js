@@ -1,8 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { HexGrid, Layout, Hexagon, GridGenerator, Pattern } from 'react-hexgrid';
-import './index.css';
 import tileTypes from './tileTypes';
+import security_tile from './img/hexart/security.svg';
+import './index.css';
 
 class TextMap extends React.Component {
   constructor(props) {
@@ -60,7 +61,19 @@ class ScenarioMap extends React.Component {
                   origin={{x: 0, y: 0}}>
             { this.state.hexagons.map((hex, i) => this.renderHexagon(hex, i))}
             <Pattern id="favicon" link="favicon.ico" />
-            <Pattern id="security" link="hexart/security.svg" />
+            <defs>
+              <pattern id="security"
+                       width={1}
+                       height={1}
+                       >
+                <image href={security_tile}
+                       y={-3}
+                       x={-2}
+                       width={31}
+                       height={37}
+                     />
+              </pattern>
+            </defs>
           </Layout>
         </HexGrid>
       </div>
@@ -72,7 +85,7 @@ class Designer extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      tiles: Array(100).fill('BL'),
+      tiles: Array(100).fill('SC'),
     };
     this.handleHexClick = this.handleHexClick.bind(this);
   }

@@ -19,7 +19,6 @@ body {
 
 .textmap{
   font-family: Consolas, monaco, monospace;
-  /* font-size: 0.75em; */
   width: 600px;
 }
 
@@ -50,6 +49,11 @@ body {
   cursor: pointer;
 }
 
+.hexagon path{
+  fill: #f00;
+  width: 100%;
+}
+
 .hexagon polygon:hover{
   stroke: #c00;
 }
@@ -62,7 +66,9 @@ body {
 }
 
 .hex-security polygon{
-  fill: #00f
+  fill: url('#security');
+
+  /* background-image:  */
 }
 
 .hex-security-guard polygon{
