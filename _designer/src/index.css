@@ -49,13 +49,9 @@ body {
   cursor: pointer;
 }
 
-.hexagon path{
-  fill: #f00;
-  width: 100%;
-}
-
 .hexagon polygon:hover{
   stroke: #c00;
+  stroke: 0.75pt;
 }
 
 .hex-blank polygon{
@@ -69,56 +65,4 @@ body {
   fill: url('#security');
 
   /* background-image:  */
-}
-
-.hex-security-guard polygon{
-}
-
-.hex-security-lock polygon{
-}
-
-.hex-security-camera polygon{
-}
-
-.hex-jewel polygon{
-}
-
-.hex-1k polygon{
-}
-
-.hex-2k polygon{
-}
-
-.hex-3k polygon{
-}
-
-.hex-reinforcements polygon{
-}
-
-.hex-gate-a polygon{
-}
-
-.hex-gate-b polygon{
-}
-
-.hex-gate-c polygon{
-}
-
-.hex-gate-d polygon{
-}
-
-.hex-entrance-upper-right polygon{
-}
-
-.hex-entrance-upper-left polygon{
-}
-
-.hex-entrance-lower-left polygon{
-}
-
-.hex-entrance-lower-right polygon{
-}
-
-.hex-watchtower{
-
 }

@@ -1,5 +1,8 @@
 {
-  "BL" : "blank",
+  "BL" : {
+      "name": "blank",
+      "fill": "#fff"
+  },
   "EM" : "empty",
   "SC" : "security",
   "GU" : "security-guard",

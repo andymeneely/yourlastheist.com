@@ -6,10 +6,6 @@ import security_tile from './img/hexart/security.svg';
 import './index.css';
 
 class TextMap extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     return (
       <div>{this.props.value}</div>
@@ -18,13 +14,13 @@ class TextMap extends React.Component {
 }
 
 class Toolbox extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     return (
-      <button>Toolbox</button>
+      <div class="tools">
+        <button onClick={() => this.props.onClearClick()}>
+          Clear
+        </button>
+      </div>
     );
   }
 }
@@ -38,9 +34,11 @@ class ScenarioMap extends React.Component {
   }
 
   renderHexagon(hex, i) {
+    const hex_type = tileTypes[this.props.tiles[i]]
     return (
       <Hexagon key={i}
-               className={'hex-' + tileTypes[this.props.tiles[i]]}
+               className={'hex-' + hex_type['name']}
+               fill={hex_type['fill'] || '#000'}
                q={hex.q}
                r={hex.r}
                s={hex.s}
@@ -85,9 +83,10 @@ class Designer extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      tiles: Array(100).fill('SC'),
+      tiles: Array(100).fill('BL'),
     };
     this.handleHexClick = this.handleHexClick.bind(this);
+    this.handleClearClick = this.handleClearClick.bind(this);
   }
 
   makeSaveString(i) {
@@ -106,6 +105,14 @@ class Designer extends React.Component {
     });
   }
 
+  handleClearClick(i){
+    this.setState({
+      tiles: Array(100).fill('BL')
+    });
+  }
+
+
+
   render() {
     return (
       <div className="designer">
@@ -114,7 +121,9 @@ class Designer extends React.Component {
                        onHexClick={this.handleHexClick}/>
         </div>
         <div className="toolbox">
-          <Toolbox />
+          <Toolbox onClearClick={this.handleClearClick}
+
+          />
         </div>
         <div className="textmap">
           <TextMap value={this.makeSaveString()}/>
