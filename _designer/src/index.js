@@ -7,25 +7,23 @@ import tileTypes from './tileTypes';
 class TextMap extends React.Component {
   constructor(props) {
     super(props);
-    this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
-  }
-
-  handleChange(event) {
-    this.setState({value: event.target.value});
-  }
-
-  handleSubmit(event) {
-    alert('An essay was submitted: ' + this.state.value);
-    event.preventDefault();
   }
 
   render() {
     return (
-      <textarea
-        value="Here is some stuff"
-        onChange={this.handleChange}
-      />
+      <div>{this.props.value}</div>
+    );
+  }
+}
+
+class Toolbox extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+
+  render() {
+    return (
+      <button>Toolbox</button>
     );
   }
 }
@@ -34,36 +32,19 @@ class ScenarioMap extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      hexagons: GridGenerator.rectangle(10,10),
-      tiles: Array(100).fill('BL'),
+      hexagons: GridGenerator.rectangle(10,10)
     };
-  }
-
-  handleClick(i) {
-    const tiles = this.state.tiles.slice();
-    switch(tiles[i]){
-      case 'BL': tiles[i] = 'EM'; break;
-      case 'EM': tiles[i] = 'SC'; break;
-      default:   tiles[i] = 'BL';
-    }
-    this.setState({
-      tiles: tiles,
-    });
   }
 
   renderHexagon(hex, i) {
     return (
-      <Hexagon
-        key={i}
-        fill="none"
-        className={'hex-' + tileTypes[this.state.tiles[i]]}
-        q={hex.q}
-        r={hex.r}
-        s={hex.s}
-        value={i}
-        onClick={() => this.handleClick(i)}
-      >
-      </Hexagon>
+      <Hexagon key={i}
+               className={'hex-' + tileTypes[this.props.tiles[i]]}
+               q={hex.q}
+               r={hex.r}
+               s={hex.s}
+               value={i}
+               onClick={() => this.props.onHexClick(i)}/>
     );
   }
 
@@ -91,18 +72,39 @@ class Designer extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      tiles: Array(100).fill(false),
+      tiles: Array(100).fill('BL'),
     };
+    this.handleHexClick = this.handleHexClick.bind(this);
+  }
+
+  makeSaveString(i) {
+    return this.state.tiles.join(' ');
+  }
+
+  handleHexClick(i){
+    const tiles = this.state.tiles.slice();
+    switch(tiles[i]){
+      case 'BL': tiles[i] = 'EM'; break;
+      case 'EM': tiles[i] = 'SC'; break;
+      default:   tiles[i] = 'BL';
+    }
+    this.setState({
+      tiles: tiles,
+    });
   }
 
   render() {
     return (
       <div className="designer">
-        <div className="scenario-map">
-          <ScenarioMap />
+        <div className="scenariomap">
+          <ScenarioMap tiles={this.state.tiles}
+                       onHexClick={this.handleHexClick}/>
         </div>
-        <div className="schematic">
-          <TextMap />
+        <div className="toolbox">
+          <Toolbox />
+        </div>
+        <div className="textmap">
+          <TextMap value={this.makeSaveString()}/>
         </div>
       </div>
     );
