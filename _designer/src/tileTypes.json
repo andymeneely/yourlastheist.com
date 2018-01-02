@@ -3,23 +3,80 @@
       "name": "blank",
       "fill": "#fff"
   },
-  "EM" : "empty",
-  "SC" : "security",
-  "GU" : "security-guard",
-  "LO" : "security-lock",
-  "CM" : "security-camera",
-  "JW" : "jewel",
-  "$1" : "1k",
-  "$2" : "2k",
-  "$3" : "3k",
-  "RE" : "reinforcements",
-  "GA" : "gate-a",
-  "GB" : "gate-b",
-  "GC" : "gate-c",
-  "GD" : "gate-d",
-  "E1" : "entrance-upper-right",
-  "E2" : "entrance-upper-left",
-  "E3" : "entrance-lower-left",
-  "E4" : "entrance-lower-right",
-  "WT" : "watchtower"
+  "EM" : {
+    "name": "empty",
+    "path_d": ""
+  },
+  "SC" : {
+      "name": "security",
+      "path_d": "m 74.96106,45.532049 v 0.044 c -8.941067,5.5567 -24.480372,6.2851 -25.856385,6.8554 1.702784,37.9715 9.985267,43.362502 25.856385,51.998701 v 0.038 c 0.01281,0 0.02562,-0.018 0.03897,-0.02 0.01281,0 0.02562,0.018 0.03896,0.02 v -0.038 c 15.871085,-8.636199 24.153615,-14.027201 25.85634,-51.998701 -1.375995,-0.5703 -16.915273,-1.2987 -25.856336,-6.8556 v -0.044 c -0.0094,0.011 -0.02562,0.018 -0.03896,0.024 -0.01281,-0.011 -0.02565,-0.018 -0.03897,-0.024 z"
+    },
+  "GU" : {
+    "name": "security-guard",
+    "path_d": ""
+  },
+  "LO" : {
+    "name": "security-lock",
+    "path_d": ""
+  },
+  "CM" : {
+    "name": "security-camera",
+    "path_d": ""
+  },
+  "JW" : {
+    "name": "jewel",
+    "path_d": ""
+  },
+  "$1" : {
+    "name": "1k",
+    "path_d": ""
+  },
+  "$2" : {
+    "name": "2k",
+    "path_d": ""
+  },
+  "$3" : {
+    "name": "3k",
+    "path_d": ""
+  },
+  "RE" : {
+    "name": "reinforcements",
+    "path_d": ""
+  },
+  "GA" : {
+    "name": "gate-a",
+    "path_d": ""
+  },
+  "GB" : {
+    "name": "gate-b",
+    "path_d": ""
+  },
+  "GC" : {
+    "name": "gate-c",
+    "path_d": ""
+  },
+  "GD" : {
+    "name": "gate-d",
+    "path_d": ""
+  },
+  "E1" : {
+    "name": "entrance-upper-right",
+    "path_d": ""
+  },
+  "E2" : {
+    "name": "entrance-upper-left",
+    "path_d": ""
+  },
+  "E3" : {
+    "name": "entrance-lower-left",
+    "path_d": ""
+  },
+  "E4" : {
+    "name": "entrance-lower-right",
+    "path_d": ""
+  },
+  "WT" : {
+    "name": "watchtower",
+    "path_d": ""
+  }
 }

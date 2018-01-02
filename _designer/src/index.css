@@ -34,35 +34,29 @@ body {
   border: 1pt solid black;
 }
 
+
+
 .hexagon polygon{
-  fill: #000;
+  pointer-events: all;
+  cursor: pointer;
   stroke: #ccc;
+}
+
+/* Hack until the next react-grid comes out */
+.hexagon polygon{
+  opacity:1;
   fill-opacity:1;
-  stroke-width: 0.2pt;
+  stroke:#333333;
+  stroke-width: 0.25px;
   stroke-linecap:round;
   stroke-linejoin:round;
   stroke-miterlimit:4;
   stroke-dasharray:none;
   stroke-dashoffset:0;
-  stroke-opacity:1;
-  pointer-events: all;
-  cursor: pointer;
+  stroke-opacity:1
 }
 
 .hexagon polygon:hover{
   stroke: #c00;
-  stroke: 0.75pt;
-}
-
-.hex-blank polygon{
-  fill: #fff;
-}
-
-.hex-empty polygon{
-}
-
-.hex-security polygon{
-  fill: url('#security');
-
-  /* background-image:  */
+  stroke-width: 1px;
 }

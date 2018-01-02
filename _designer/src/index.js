@@ -2,7 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { HexGrid, Layout, Hexagon, GridGenerator, Pattern } from 'react-hexgrid';
 import tileTypes from './tileTypes';
-import security_tile from './img/hexart/security.svg';
 import './index.css';
 
 class TextMap extends React.Component {
@@ -16,9 +15,12 @@ class TextMap extends React.Component {
 class Toolbox extends React.Component {
   render() {
     return (
-      <div class="tools">
+      <div className="tools">
         <button onClick={() => this.props.onClearClick()}>
           Clear
+        </button>
+        <button onClick={() => this.props.onSaveClick()}>
+          Save SVG
         </button>
       </div>
     );
@@ -35,15 +37,34 @@ class ScenarioMap extends React.Component {
 
   renderHexagon(hex, i) {
     const hex_type = tileTypes[this.props.tiles[i]]
+    var fill_color = hex_type['fill'] || '#000000'
     return (
-      <Hexagon key={i}
-               className={'hex-' + hex_type['name']}
-               fill={hex_type['fill'] || '#000'}
-               q={hex.q}
-               r={hex.r}
-               s={hex.s}
-               value={i}
-               onClick={() => this.props.onHexClick(i)}/>
+      <Hexagon
+        key={i}
+        className={'hex-' + hex_type['name']}
+        fill='#0000' /* Empty until react-hexgrid updates */
+        q={hex.q}
+        r={hex.r}
+        s={hex.s}
+        value={i}
+        onClick={() => this.props.onHexClick(i)}
+        draggable={false}
+      >
+        <svg
+          x="-15"
+          y="-15"
+          width="30"
+          height="30"
+          viewBox="0 0 150 150"
+          >
+          <path
+            fill={fill_color}
+            d="M 135.62899,110.02267 75,145.04531 14.371011,110.02267 V 39.977346 L 75,4.9546871 135.62899,39.977346 Z"/>
+          <path
+            fill="#fff"
+            d={hex_type['path_d']}/>
+        </svg>
+      </Hexagon>
     );
   }
 
@@ -52,26 +73,14 @@ class ScenarioMap extends React.Component {
       <div className="hexgrid">
         <HexGrid width={600}
                  height={600}
-                 viewBox="-30 -30 350 350">
+                 viewBox="-30 -30 350 350"
+                 >
           <Layout size={{ x: 16, y: 16 }}
                   spacing={1.02}
                   flat={false}
                   origin={{x: 0, y: 0}}>
             { this.state.hexagons.map((hex, i) => this.renderHexagon(hex, i))}
             <Pattern id="favicon" link="favicon.ico" />
-            <defs>
-              <pattern id="security"
-                       width={1}
-                       height={1}
-                       >
-                <image href={security_tile}
-                       y={-3}
-                       x={-2}
-                       width={31}
-                       height={37}
-                     />
-              </pattern>
-            </defs>
           </Layout>
         </HexGrid>
       </div>
@@ -87,6 +96,7 @@ class Designer extends React.Component {
     };
     this.handleHexClick = this.handleHexClick.bind(this);
     this.handleClearClick = this.handleClearClick.bind(this);
+    this.handleSaveClick = this.handleSaveClick.bind(this);
   }
 
   makeSaveString(i) {
@@ -111,7 +121,20 @@ class Designer extends React.Component {
     });
   }
 
-
+  handleSaveClick(){
+    var svg = document.querySelector(".hexgrid>svg");
+    var serializer = new XMLSerializer();
+    var svg_blob = new Blob([serializer.serializeToString(svg)],
+                          {'type': "image/svg+xml"});
+    var url = URL.createObjectURL(svg_blob);
+    // var svg_win = window.open(url, "svg_win");
+    var a = document.createElement("a");
+    document.body.appendChild(a);
+    a.setAttribute("download", "scenario.svg");
+    a.setAttribute("href", url);
+    a.style["display"] = "none";
+    a.click();
+  }
 
   render() {
     return (
@@ -122,7 +145,7 @@ class Designer extends React.Component {
         </div>
         <div className="toolbox">
           <Toolbox onClearClick={this.handleClearClick}
-
+                   onSaveClick={this.handleSaveClick}
           />
         </div>
         <div className="textmap">

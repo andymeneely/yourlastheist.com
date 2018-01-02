@@ -17,7 +17,15 @@
    inkscape:version="0.92.0 r15299"
    sodipodi:docname="security.svg">
   <defs
-     id="defs5250" />
+     id="defs5250">
+    <inkscape:perspective
+       sodipodi:type="inkscape:persp3d"
+       inkscape:vp_x="0 : 75 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_z="150 : 75 : 1"
+       inkscape:persp3d-origin="75 : 50 : 1"
+       id="perspective5044" />
+  </defs>
   <sodipodi:namedview
      id="base"
      pagecolor="#ffffff"
@@ -25,9 +33,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="5.6"
-     inkscape:cx="55.788851"
-     inkscape:cy="69.682971"
+     inkscape:zoom="2.8"
+     inkscape:cx="45.895985"
+     inkscape:cy="42.898744"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -46,26 +54,23 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
   <g
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
-     id="layer1"
-     transform="translate(0,-588.24998)">
-    <rect
-       style="opacity:1;vector-effect:none;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.17638887;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
-       id="rect4484"
-       width="150"
-       height="150"
-       x="0"
-       y="588.25006" />
+     id="layer1">
+    <path
+       style="opacity:1;vector-effect:none;fill:none;fill-opacity:1;stroke:#e40000;stroke-width:1.33333337;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       d="M 135.62899,110.02267 75,145.04531 14.371011,110.02267 V 39.977346 L 75,4.9546871 135.62899,39.977346 Z"
+       id="path5060"
+       inkscape:connector-curvature="0" />
     <path
        inkscape:connector-curvature="0"
-       style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.65551883;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       d="m 74.69321,634.04976 v 0.0439 c -8.941067,5.5568 -24.480372,6.28524 -25.856385,6.85559 1.702784,37.97142 9.985267,43.36248 25.856385,51.99862 v 0.038 c 0.01281,0 0.02562,-0.0178 0.03897,-0.0203 0.01281,0 0.02562,0.0178 0.03896,0.0203 v -0.038 c 15.87109,-8.63614 24.153618,-14.0272 25.85634,-51.99862 -1.375999,-0.57035 -16.915273,-1.29879 -25.856336,-6.85569 v -0.0439 c -0.0094,0.0107 -0.02562,0.0178 -0.03896,0.0236 -0.01281,-0.0108 -0.02565,-0.0178 -0.03897,-0.0236 z"
+       style="fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.65551883;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 74.96106,45.532049 v 0.044 c -8.941067,5.5567 -24.480372,6.2851 -25.856385,6.8554 1.702784,37.9715 9.985267,43.362502 25.856385,51.998701 v 0.038 c 0.01281,0 0.02562,-0.018 0.03897,-0.02 0.01281,0 0.02562,0.018 0.03896,0.02 v -0.038 c 15.871085,-8.636199 24.153615,-14.027201 25.85634,-51.998701 -1.375995,-0.5703 -16.915273,-1.2987 -25.856336,-6.8556 v -0.044 c -0.0094,0.011 -0.02562,0.018 -0.03896,0.024 -0.01281,-0.011 -0.02565,-0.018 -0.03897,-0.024 z"
        id="path9311" />
   </g>
 </svg>
