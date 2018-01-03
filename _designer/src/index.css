@@ -32,13 +32,12 @@ body {
 
 .hexgrid{
   border: 1pt solid black;
+  cursor: pointer;
+  pointer-events: all;
 }
-
-
 
 .hexagon polygon{
   pointer-events: all;
-  cursor: pointer;
   stroke: #ccc;
 }
 

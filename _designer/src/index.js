@@ -16,9 +16,21 @@ class Toolbox extends React.Component {
   render() {
     return (
       <div className="tools">
-        <button onClick={() => this.props.onClearClick()}>Clear</button>
-        <button onClick={() => this.props.onSaveClick()}>Save SVG</button>
-        <button onClick={() => this.props.onTypeClick('SG')}>SG</button>
+        <div>
+          <button onClick={() => this.props.onClearClick()}>Clear</button>
+        </div>
+        <div>
+          <button onClick={() => this.props.onSaveClick()}>Save SVG</button>
+        </div>
+        <div>
+          <button onClick={() => this.props.onTypeClick('ALL')}>Blank/Security</button>
+        </div>
+        <div>
+          <button onClick={() => this.props.onTypeClick('GU')}>Guard</button>
+        </div>
+        <div>
+          <button onClick={() => this.props.onTypeClick('LO')}>Lock</button>
+        </div>
     </div>
     );
   }
@@ -34,6 +46,7 @@ class ScenarioMap extends React.Component {
 
   renderHexagon(hex, i) {
     const hex_type = tileTypes[this.props.tiles[i]]
+    console.log(this.props.tiles[i])
     var fill_color = hex_type['fill'] || '#000000'
     return (
       <Hexagon
