@@ -16,13 +16,10 @@ class Toolbox extends React.Component {
   render() {
     return (
       <div className="tools">
-        <button onClick={() => this.props.onClearClick()}>
-          Clear
-        </button>
-        <button onClick={() => this.props.onSaveClick()}>
-          Save SVG
-        </button>
-      </div>
+        <button onClick={() => this.props.onClearClick()}>Clear</button>
+        <button onClick={() => this.props.onSaveClick()}>Save SVG</button>
+        <button onClick={() => this.props.onTypeClick('SG')}>SG</button>
+    </div>
     );
   }
 }
@@ -93,10 +90,12 @@ class Designer extends React.Component {
     super(props);
     this.state = {
       tiles: Array(100).fill('BL'),
+      activeType: 'ALL'
     };
     this.handleHexClick = this.handleHexClick.bind(this);
     this.handleClearClick = this.handleClearClick.bind(this);
     this.handleSaveClick = this.handleSaveClick.bind(this);
+    this.handleTypeClick = this.handleTypeClick.bind(this);
   }
 
   makeSaveString(i) {
@@ -104,11 +103,17 @@ class Designer extends React.Component {
   }
 
   handleHexClick(i){
+    console.log('Setting active type to' + this.state.activeType)
     const tiles = this.state.tiles.slice();
-    switch(tiles[i]){
-      case 'BL': tiles[i] = 'EM'; break;
-      case 'EM': tiles[i] = 'SC'; break;
-      default:   tiles[i] = 'BL';
+    if(this.state.activeType === 'ALL'){
+      switch(tiles[i]){
+        case 'BL': tiles[i] = 'EM'; break;
+        case 'EM': tiles[i] = 'SC'; break;
+        default:   tiles[i] = 'BL';
+      }
+    } else {
+      console.log('Setting active type to' + this.state.activeType)
+      tiles[i] = this.state.activeType;
     }
     this.setState({
       tiles: tiles,
@@ -118,6 +123,12 @@ class Designer extends React.Component {
   handleClearClick(i){
     this.setState({
       tiles: Array(100).fill('BL')
+    });
+  }
+
+  handleTypeClick(hexType){
+    this.setState({
+      activeType: hexType
     });
   }
 
@@ -146,6 +157,7 @@ class Designer extends React.Component {
         <div className="toolbox">
           <Toolbox onClearClick={this.handleClearClick}
                    onSaveClick={this.handleSaveClick}
+                   onTypeClick={this.handleTypeClick}
           />
         </div>
         <div className="textmap">
