@@ -47,35 +47,36 @@ class ScenarioMap extends React.Component {
   renderHexagon(hex, i) {
     const hex_type = tileTypes[this.props.tiles[i]]
     console.log(this.props.tiles[i])
-    var fill_color = hex_type['fill'] || '#000000'
     return (
       <Hexagon
         key={i}
         className={'hex-' + hex_type['name']}
-        fill='#0000' /* Empty until react-hexgrid updates */
+        fill={'SC'}
+        // fill='#0000' /* Empty until react-hexgrid updates */
         q={hex.q}
         r={hex.r}
         s={hex.s}
         value={i}
         onClick={() => this.props.onHexClick(i)}
         draggable={false}
-      >
-        <svg
-          x="-15"
-          y="-15"
-          width="30"
-          height="30"
-          viewBox="0 0 150 150"
-          >
-          <path
-            fill={fill_color}
-            d="M 135.62899,110.02267 75,145.04531 14.371011,110.02267 V 39.977346 L 75,4.9546871 135.62899,39.977346 Z"/>
-          <path
-            fill="#fff"
-            d={hex_type['path_d']}/>
-        </svg>
-      </Hexagon>
+      />
     );
+  }
+
+  createPatterns(){
+    var defs = [];
+    var typeMap = tileTypes;
+    for(var t in tileTypes) {
+      var svg = require('./img/hexart/' + typeMap[t] + '.svg');
+      defs.push(
+        <pattern
+          id={t} patternUnits="objectBoundingBox"
+          x="0" y="0" width="100%" height="100%">
+            <image xlinkHref={svg} x="-6" y="-3" width="40" height="40" />
+        </pattern>
+      )
+    }
+    return (<defs>{defs}</defs>)
   }
 
   render() {
@@ -91,6 +92,7 @@ class ScenarioMap extends React.Component {
                   origin={{x: 0, y: 0}}>
             { this.state.hexagons.map((hex, i) => this.renderHexagon(hex, i))}
             <Pattern id="favicon" link="favicon.ico" />
+            {this.createPatterns()}
           </Layout>
         </HexGrid>
       </div>

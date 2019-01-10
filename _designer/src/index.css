@@ -33,26 +33,20 @@ body {
 .hexgrid{
   border: 1pt solid black;
   cursor: pointer;
-  pointer-events: all;
+  pointer-events: visible;
+  /* pointer-events: all; */
 }
 
 .hexagon polygon{
-  pointer-events: all;
+  /* pointer-events: all; */
   stroke: #ccc;
 }
 
 /* Hack until the next react-grid comes out */
-.hexagon polygon{
-  opacity:1;
-  fill-opacity:1;
-  stroke:#333333;
-  stroke-width: 0.25px;
-  stroke-linecap:round;
-  stroke-linejoin:round;
-  stroke-miterlimit:4;
-  stroke-dasharray:none;
-  stroke-dashoffset:0;
-  stroke-opacity:1
+.hexagon svg{
+  opacity: 1;
+  /* transform: scale(0.93); */
+  pointer-events: all;
 }
 
 .hexagon polygon:hover{
