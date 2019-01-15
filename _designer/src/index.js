@@ -16,21 +16,12 @@ class Toolbox extends React.Component {
   render() {
     return (
       <div className="tools">
-        <div>
-          <button onClick={() => this.props.onClearClick()}>Clear</button>
-        </div>
-        <div>
-          <button onClick={() => this.props.onSaveClick()}>Save SVG</button>
-        </div>
-        <div>
-          <button onClick={() => this.props.onTypeClick('ALL')}>Blank/Security</button>
-        </div>
-        <div>
-          <button onClick={() => this.props.onTypeClick('GU')}>Guard</button>
-        </div>
-        <div>
-          <button onClick={() => this.props.onTypeClick('LO')}>Lock</button>
-        </div>
+        <div> <button onClick={() => this.props.onClearClick()}>Clear</button> </div>
+        <div> <button onClick={() => this.props.onSaveClick()}>Save SVG</button> </div>
+        <div> <button onClick={() => this.props.onTypeClick('GP')}> Gap </button> </div>
+        <div> <button onClick={() => this.props.onTypeClick('EM')}> Empty </button> </div>
+        <div> <button onClick={() => this.props.onTypeClick('GU')}> Guard </button> </div>
+        <div> <button onClick={() => this.props.onTypeClick('LO')}>Lock</button> </div>
     </div>
     );
   }
@@ -45,13 +36,14 @@ class ScenarioMap extends React.Component {
   }
 
   renderHexagon(hex, i) {
-    const hex_type = tileTypes[this.props.tiles[i]]
-    console.log(this.props.tiles[i])
+    const hex_code = this.props.tiles[i];
+    const hex_type = tileTypes[hex_code];
+    console.log("Rendering hex " + i + " (" + hex_code + ")");
     return (
       <Hexagon
         key={i}
-        className={'hex-' + hex_type['name']}
-        fill={'EM'} /* Empty until react-hexgrid updates */
+        className={'hex-' + hex_type}
+        fill={hex_code} /* Gap until react-hexgrid updates */
         q={hex.q}
         r={hex.r}
         s={hex.s}
@@ -103,8 +95,8 @@ class Designer extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      tiles: Array(100).fill('EM'),
-      activeType: 'ALL'
+      tiles: Array(100).fill('GP'),
+      activeType: 'GP'
     };
     this.handleHexClick = this.handleHexClick.bind(this);
     this.handleClearClick = this.handleClearClick.bind(this);
@@ -117,18 +109,9 @@ class Designer extends React.Component {
   }
 
   handleHexClick(i){
-    console.log('Setting active type to' + this.state.activeType)
     const tiles = this.state.tiles.slice();
-    if(this.state.activeType === 'ALL'){
-      switch(tiles[i]){
-        case 'BL': tiles[i] = 'EM'; break;
-        case 'EM': tiles[i] = 'SC'; break;
-        default:   tiles[i] = 'BL';
-      }
-    } else {
-      console.log('Setting active type to' + this.state.activeType)
-      tiles[i] = this.state.activeType;
-    }
+    console.log('Setting active type to ' + this.state.activeType)
+    tiles[i] = this.state.activeType;
     this.setState({
       tiles: tiles,
     });
@@ -136,7 +119,7 @@ class Designer extends React.Component {
 
   handleClearClick(i){
     this.setState({
-      tiles: Array(100).fill('BL')
+      tiles: Array(100).fill('GP')
     });
   }
 

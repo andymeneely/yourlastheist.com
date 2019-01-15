@@ -94,5 +94,21 @@
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1">
+     <path
+        sodipodi:type="star"
+        id="path16"
+        sodipodi:sides="6"
+        sodipodi:cx="74.999992"
+        sodipodi:cy="75.35714"
+        sodipodi:r1="70.452705"
+        sodipodi:r2="61.013832"
+        sodipodi:arg1="0.52359878"
+        sodipodi:arg2="1.0471976"
+        inkscape:flatsided="true"
+        inkscape:rounded="0"
+        inkscape:randomized="0"
+        d="m 136.01382,110.58349 -61.013828,35.22635 -61.013832,-35.22635 0,-70.452703 L 74.999993,4.9044342 136.01383,40.130787 Z"
+        style="stroke-width:1.1251328"
+        transform="matrix(1,0,0,0.99357434,7.6293945e-6,0.12707977)" />
   </g>
 </svg>
