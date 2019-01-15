@@ -51,8 +51,7 @@ class ScenarioMap extends React.Component {
       <Hexagon
         key={i}
         className={'hex-' + hex_type['name']}
-        fill={'SC'}
-        // fill='#0000' /* Empty until react-hexgrid updates */
+        fill={'EM'} /* Empty until react-hexgrid updates */
         q={hex.q}
         r={hex.r}
         s={hex.s}
@@ -104,7 +103,7 @@ class Designer extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      tiles: Array(100).fill('BL'),
+      tiles: Array(100).fill('EM'),
       activeType: 'ALL'
     };
     this.handleHexClick = this.handleHexClick.bind(this);
