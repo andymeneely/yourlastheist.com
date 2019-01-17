@@ -20,12 +20,6 @@ class HexToolButton extends React.Component {
   render() {
     var t = this.props.hexType
     var if_active = this.props.isActiveType ? 'active' : ''
-    if(this.props.isActiveType){
-      console.log("I'm active!!");
-    } else {
-      console.log("I'm not active :(");
-    }
-
     return (
       <button onClick={() => this.props.onHexButtonClick(t)}
               className={"hexbutton " + if_active}>
