@@ -15,7 +15,7 @@
    version="1.1"
    id="svg5256"
    inkscape:version="0.92.3 (2405546, 2018-03-11)"
-   sodipodi:docname="security-lock.svg">
+   sodipodi:docname="entrance-upper-left.svg">
   <defs
      id="defs5250">
     <inkscape:perspective
@@ -34,8 +34,8 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="2.8"
-     inkscape:cx="-94.639729"
-     inkscape:cy="37.541601"
+     inkscape:cx="72.324557"
+     inkscape:cy="110.75589"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -86,18 +86,12 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
   <g
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
-     id="layer1">
-    <path
-       d="m 93.449543,67.517611 q 1.087574,0 2.09746,0.426491 1.009888,0.426317 1.747866,1.162959 0.776823,0.697875 1.204107,1.66712 0.466124,0.930494 0.466124,1.977225 v 29.193524 q 0,1.12434 -0.426993,2.09362 -0.38844,0.96924 -1.126418,1.70586 -0.737979,0.77532 -1.709021,1.20187 -0.971044,0.4262 -2.058619,0.4262 H 56.472493 q -1.126427,0 -2.136317,-0.4262 -0.971029,-0.42678 -1.709013,-1.20187 -0.737984,-0.73662 -1.16527,-1.70586 Q 51.0349,103.06927 51.0349,101.94493 V 72.751406 q 0,-1.04673 0.426993,-1.977225 0.466142,-0.969245 1.204109,-1.66712 0.776826,-0.736612 1.747872,-1.162959 0.971047,-0.426491 2.058617,-0.426491 v -6.280703 q 0,-3.954455 0.660347,-7.366175 0.660288,-3.41172 2.641221,-5.892938 2.019776,-2.520128 5.632028,-3.915794 3.651108,-1.434477 9.593927,-1.434477 5.981629,0 9.593896,1.434477 3.65111,1.395666 5.593196,3.915794 1.980928,2.481219 2.602433,5.892938 0.66029,3.41172 0.66029,7.366175 z M 64.395925,61.236908 v 6.086821 h 21.207584 v -6.086821 q 0,-2.946468 -0.233063,-4.962442 -0.233063,-2.054878 -1.281729,-3.295486 -1.009888,-1.240611 -3.146203,-1.783347 -2.136299,-0.542747 -5.94279,-0.542747 -3.767661,0 -5.90396,0.542747 -2.097475,0.542749 -3.146203,1.783347 -1.048668,1.240608 -1.320574,3.295486 -0.233062,2.015973 -0.233062,4.962442 z"
-       id="path6948"
-       inkscape:connector-curvature="0"
-       style="font-style:normal;font-weight:normal;font-size:medium;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;display:inline;opacity:1;vector-effect:none;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.65551883;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
-  </g>
+     id="layer1" />
 </svg>

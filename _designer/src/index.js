@@ -147,15 +147,15 @@ class Designer extends React.Component {
   render() {
     return (
       <div className="designer">
-        <div className="scenariomap">
-          <ScenarioMap tiles={this.state.tiles}
-                       onHexClick={this.handleHexClick}/>
-        </div>
         <div className="toolbox">
           <Toolbox onClearClick={this.handleClearClick}
                    onSaveClick={this.handleSaveClick}
                    onTypeClick={this.handleTypeClick}
           />
+        </div>
+        <div className="scenariomap">
+          <ScenarioMap tiles={this.state.tiles}
+                       onHexClick={this.handleHexClick}/>
         </div>
         <div className="textmap">
           <TextMap value={this.makeSaveString()}/>
