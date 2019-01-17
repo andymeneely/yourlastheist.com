@@ -4,6 +4,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "lz-string": "^1.4.4",
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
     "react-hexgrid": "^1.0.3",

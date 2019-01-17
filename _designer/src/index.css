@@ -13,8 +13,30 @@ body {
   flex-wrap: wrap;
 }
 
-.toolbox{
+.toolbox {
+  overflow: scroll;
+  height: 600px;
+}
 
+.toolbox .tools{
+  display: flex;
+  flex-direction: column;
+}
+
+.toolbox button.hexbutton{
+  width: 6em;
+  cursor: pointer;
+  background: none;
+  border: 1px solid gray;
+  margin-bottom: 2px;
+}
+
+.toolbox button.hexbutton.active{
+  border: 3px solid red;
+}
+
+.toolbox button.hexbutton img{
+  width: 100%;
 }
 
 .textmap{

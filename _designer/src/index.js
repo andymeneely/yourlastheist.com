@@ -3,25 +3,56 @@ import ReactDOM from 'react-dom';
 import { HexGrid, Layout, Hexagon, GridGenerator, Pattern } from 'react-hexgrid';
 import tileTypes from './tileTypes';
 import './index.css';
+import {compressToEncodedURIComponent as compress} from 'lz-string';
 
 class TextMap extends React.Component {
   render() {
     return (
-      <div>{this.props.value}</div>
+      <div>
+        <div>{this.props.value}</div>
+        <div>{compress(this.props.value)}</div>
+      </div>
     );
+  }
+}
+
+class HexToolButton extends React.Component {
+  render() {
+    var t = this.props.hexType
+    var if_active = this.props.isActiveType ? 'active' : ''
+    if(this.props.isActiveType){
+      console.log("I'm active!!");
+    } else {
+      console.log("I'm not active :(");
+    }
+
+    return (
+      <button onClick={() => this.props.onHexButtonClick(t)}
+              className={"hexbutton " + if_active}>
+      <img src={this.props.svgurl}/>
+    </button>
+   )
   }
 }
 
 class Toolbox extends React.Component {
   render() {
+    var hexbuttons = [];
+    var typeMap = tileTypes;
+    for(var t in tileTypes) {
+      hexbuttons.push(
+        <HexToolButton
+           hexType={t}
+           svgurl={require('./img/hexart/' + typeMap[t] + '.svg')}
+           onHexButtonClick={this.props.onTypeClick}
+           isActiveType={this.props.activeType === t}
+        />)
+    }
     return (
       <div className="tools">
-        <div> <button onClick={() => this.props.onClearClick()}>Clear</button> </div>
-        <div> <button onClick={() => this.props.onSaveClick()}>Save SVG</button> </div>
-        <div> <button onClick={() => this.props.onTypeClick('GP')}> Gap </button> </div>
-        <div> <button onClick={() => this.props.onTypeClick('EM')}> Empty </button> </div>
-        <div> <button onClick={() => this.props.onTypeClick('GU')}> Guard </button> </div>
-        <div> <button onClick={() => this.props.onTypeClick('LO')}>Lock</button> </div>
+        <button onClick={() => this.props.onClearClick()}>Clear</button>
+        <button onClick={() => this.props.onSaveClick()}>Save SVG</button>
+        {hexbuttons}
     </div>
     );
   }
@@ -38,7 +69,7 @@ class ScenarioMap extends React.Component {
   renderHexagon(hex, i) {
     const hex_code = this.props.tiles[i];
     const hex_type = tileTypes[hex_code];
-    console.log("Rendering hex " + i + " (" + hex_code + ")");
+    // console.log("Rendering hex " + i + " (" + hex_code + ")");
     return (
       <Hexagon
         key={i}
@@ -110,7 +141,6 @@ class Designer extends React.Component {
 
   handleHexClick(i){
     const tiles = this.state.tiles.slice();
-    console.log('Setting active type to ' + this.state.activeType)
     tiles[i] = this.state.activeType;
     this.setState({
       tiles: tiles,
@@ -151,6 +181,7 @@ class Designer extends React.Component {
           <Toolbox onClearClick={this.handleClearClick}
                    onSaveClick={this.handleSaveClick}
                    onTypeClick={this.handleTypeClick}
+                   activeType={this.state.activeType}
           />
         </div>
         <div className="scenariomap">
