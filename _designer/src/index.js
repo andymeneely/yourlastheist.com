@@ -7,6 +7,7 @@ import {compressToEncodedURIComponent as compress} from 'lz-string';
 
 class TextMap extends React.Component {
   render() {
+    debugger;
     return (
       <div>
         <div>{this.props.value}</div>
