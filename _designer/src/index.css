@@ -16,11 +16,16 @@ body {
 .toolbox {
   overflow: scroll;
   height: 600px;
+  text-align: center;
 }
 
 .toolbox .tools{
   display: flex;
   flex-direction: column;
+}
+
+.toolbox label {
+  cursor: pointer;
 }
 
 .toolbox button.hexbutton{
@@ -56,12 +61,14 @@ body {
   border: 1pt solid black;
   cursor: pointer;
   pointer-events: visible;
-  /* pointer-events: all; */
 }
 
-.hexagon polygon{
-  /* pointer-events: all; */
+.grid_show .hexagon polygon {
   stroke: #ccc;
+}
+
+.grid_hide .hexagon polygon {
+  stroke: #fff;
 }
 
 /* Hack until the next react-grid comes out */

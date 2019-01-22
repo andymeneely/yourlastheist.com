@@ -7,7 +7,6 @@ import {compressToEncodedURIComponent as compress} from 'lz-string';
 
 class TextMap extends React.Component {
   render() {
-    debugger;
     return (
       <div>
         <div>{this.props.value}</div>
@@ -47,6 +46,15 @@ class Toolbox extends React.Component {
       <div className="tools">
         <button onClick={() => this.props.onClearClick()}>Clear</button>
         <button onClick={() => this.props.onSaveClick()}>Save SVG</button>
+        <label>
+          <input
+              name="isGoing"
+              type="checkbox"
+              checked={this.props.showGrid}
+              onChange={this.props.onShowGridClick} />
+            Grid
+        </label>
+
         {hexbuttons}
     </div>
     );
@@ -65,11 +73,12 @@ class ScenarioMap extends React.Component {
     const hex_code = this.props.tiles[i];
     const hex_type = tileTypes[hex_code];
     // console.log("Rendering hex " + i + " (" + hex_code + ")");
+    var stroke_state = this.props.showGrid ? ' grid_show' : ' grid_hide';
     return (
       <Hexagon
         key={i}
-        className={'hex-' + hex_type}
-        fill={hex_code} /* Gap until react-hexgrid updates */
+        className={'hex-' + hex_type + stroke_state}
+        fill={hex_code}
         q={hex.q}
         r={hex.r}
         s={hex.s}
@@ -122,12 +131,15 @@ class Designer extends React.Component {
     super(props);
     this.state = {
       tiles: Array(100).fill('GP'),
-      activeType: 'GP'
+      activeType: 'GP',
+      showGrid: true
     };
     this.handleHexClick = this.handleHexClick.bind(this);
     this.handleClearClick = this.handleClearClick.bind(this);
     this.handleSaveClick = this.handleSaveClick.bind(this);
     this.handleTypeClick = this.handleTypeClick.bind(this);
+    this.handleShowGridClick = this.handleShowGridClick.bind(this);
+
   }
 
   makeSaveString(i) {
@@ -154,6 +166,12 @@ class Designer extends React.Component {
     });
   }
 
+  handleShowGridClick(){
+    this.setState({
+      showGrid: !this.props.showGrid
+    });
+  }
+
   handleSaveClick(){
     var svg = document.querySelector(".hexgrid>svg");
     var serializer = new XMLSerializer();
@@ -176,6 +194,8 @@ class Designer extends React.Component {
           <Toolbox onClearClick={this.handleClearClick}
                    onSaveClick={this.handleSaveClick}
                    onTypeClick={this.handleTypeClick}
+                   onShowGridClick={this.handleShowGridClick}
+                   showGrid={this.state.showGrid}
                    activeType={this.state.activeType}
           />
         </div>
