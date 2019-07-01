@@ -2,6 +2,7 @@
   "GP": "gap",
   "EM": "empty",
   "SC": "security",
+  "S2": "security-2",
   "GU": "security-guard",
   "LO": "security-lock",
   "CM": "security-camera",
