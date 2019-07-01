@@ -24,11 +24,11 @@ class Designer extends React.Component {
   }
 
   loadOrInit(savekey) {
-    if(savekey.length === 0 ) { // init
+    if(savekey == null || savekey.length === 0 ) { // init
       return this.initialState();
     }
     let save_str = decompress(savekey); // load
-    if(save_str.length === 0){ //decompressing went awry
+    if(save_str == null || save_str.length === 0){ //decompressing went awry
       console.log(`Savekey ${savekey} failed to decompress properly.`)
       return this.initialState();
     }
