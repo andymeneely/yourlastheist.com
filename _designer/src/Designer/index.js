@@ -2,21 +2,41 @@ import React from 'react';
 import ScenarioMap from './ScenarioMap';
 import TextMap from './TextMap';
 import Toolbox from './Toolbox';
+import {decompressFromEncodedURIComponent as decompress} from 'lz-string';
 
 class Designer extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      tiles: Array(100).fill('GP'),
-      activeType: 'GP',
-      showGrid: true
-    };
+    this.state = this.loadOrInit(props.savekey);
     this.handleHexClick = this.handleHexClick.bind(this);
     this.handleClearClick = this.handleClearClick.bind(this);
     this.handleSaveClick = this.handleSaveClick.bind(this);
     this.handleTypeClick = this.handleTypeClick.bind(this);
     this.handleShowGridClick = this.handleShowGridClick.bind(this);
+  }
 
+  initialState(){
+    return {
+      tiles: Array(100).fill('GP'),
+      activeType: 'EM',
+      showGrid: true
+    };
+  }
+
+  loadOrInit(savekey) {
+    if(savekey.length === 0 ) { // init
+      return this.initialState();
+    }
+    let save_str = decompress(savekey); // load
+    if(save_str.length === 0){ //decompressing went awry
+      console.log(`Savekey ${savekey} failed to decompress properly.`)
+      return this.initialState();
+    }
+    return {
+      tiles: save_str.split(' '),
+      activeType: 'GP',
+      showGrid: true
+    };
   }
 
   makeSaveString(i) {
