@@ -1,27 +1,43 @@
 body {
-  font-size: 1em;
+  font-size: 1.2em;
   font-family: 'Archivo Narrow', sans-serif;
   line-height: 1.2;
   padding: 0;
 }
 
+h1{
+  font-family: 'Archivo Black', sans-serif;
+  text-align: center;
+}
+
+button {
+  font-family: inherit;
+  font-size: inherit;
+}
+
 .designer{
   margin-left: auto;
   margin-right: auto;
-  width: 800px;
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
+  height: 80vh;
+  width: 100%;
 }
 
 .toolbox {
   overflow: scroll;
-  height: 600px;
+  overflow-y: auto;
+  overflow-x: hidden;
   text-align: center;
+  width: 30vh;
 }
 
 .toolbox .tools{
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
 }
 
 .toolbox label {
@@ -29,15 +45,18 @@ body {
 }
 
 .toolbox button.hexbutton{
-  width: 6em;
+  width: 4em;
   cursor: pointer;
   background: none;
-  border: 1px solid gray;
+  /* border: 1px solid gray; */
+  border: 3px solid white;
+  user-select: none;
   margin-bottom: 2px;
 }
 
 .toolbox button.hexbutton.active{
   border: 3px solid red;
+
 }
 
 .toolbox button.hexbutton img{
@@ -46,11 +65,8 @@ body {
 
 .textmap{
   font-family: Consolas, monaco, monospace;
-  width: 600px;
-}
-
-.textmap textarea{
-  width: 600px;
+  font-size: 80%;
+  width: 30vh;
 }
 
 .scenariomap{
@@ -74,11 +90,29 @@ body {
 /* Hack until the next react-grid comes out */
 .hexagon svg{
   opacity: 1;
-  /* transform: scale(0.93); */
   pointer-events: all;
 }
 
 .hexagon polygon:hover{
   stroke: #c00;
   stroke-width: 1px;
+}
+
+.statusbox {
+  padding-left: 0.5em;
+  padding-right: 1em;
+}
+
+.statusbox .good::before{
+  font-weight: bold;
+  color: green;
+  content: '✓';
+  padding-right: 0.12em;
+}
+
+.statusbox .bad::before {
+  font-weight: bold;
+  color: red;
+  content: '✗';
+
 }

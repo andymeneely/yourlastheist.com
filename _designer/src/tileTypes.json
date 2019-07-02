@@ -10,6 +10,7 @@
   "$2": "2k",
   "$3": "3k",
   "RE": "reinforcements",
+  "WT": "watchtower",
   "GA": "gate-a",
   "GB": "gate-b",
   "GC": "gate-c",
@@ -19,6 +20,5 @@
   "E3": "entrance-lower-right",
   "E4": "entrance-lower-left",
   "E5": "entrance-left",
-  "E6": "entrance-upper-left",
-  "WT": "watchtower"
+  "E6": "entrance-upper-left"
 }

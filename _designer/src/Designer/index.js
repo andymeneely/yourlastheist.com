@@ -1,5 +1,6 @@
 import React from 'react';
 import ScenarioMap from './ScenarioMap';
+import StatusBox from './StatusBox';
 import TextMap from './TextMap';
 import Toolbox from './Toolbox';
 import {decompressFromEncodedURIComponent as decompress} from 'lz-string';
@@ -100,6 +101,7 @@ class Designer extends React.Component {
           <ScenarioMap tiles={this.state.tiles}
                        onHexClick={this.handleHexClick}/>
         </div>
+        <StatusBox tiles={this.state.tiles}/>
         <div className="textmap">
           <TextMap value={this.makeSaveString()}/>
         </div>
