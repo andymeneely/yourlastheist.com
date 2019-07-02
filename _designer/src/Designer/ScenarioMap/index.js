@@ -71,9 +71,10 @@ class ScenarioMap extends React.Component {
         <pattern
           id={t}
           patternUnits="objectBoundingBox"
-          x="-40" y="-40"
-          width="100%"
-          height="100%"
+          x="-10%" y="-10%"
+          width="120%"
+          height="120%"
+          viewBox="0 0 150 150"
           dangerouslySetInnerHTML={{__html: tileIcons[t].default}}
         >
         </pattern>
@@ -85,8 +86,8 @@ class ScenarioMap extends React.Component {
   render() {
     return (
       <div className="hexgrid">
-        <HexGrid width={600}
-                 height={600}
+        <HexGrid width={800}
+                 height={800}
                  viewBox="-30 -30 350 350"
                  >
           <Layout size={{ x: 16, y: 16 }}

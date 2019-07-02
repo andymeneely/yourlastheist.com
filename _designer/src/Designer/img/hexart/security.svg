@@ -33,17 +33,17 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="3.959798"
-     inkscape:cx="58.462066"
-     inkscape:cy="57.998663"
+     inkscape:zoom="0.70000001"
+     inkscape:cx="-185.13179"
+     inkscape:cy="-87.393598"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
      inkscape:pagecheckerboard="true"
      units="px"
      inkscape:window-width="1920"
-     inkscape:window-height="1017"
-     inkscape:window-x="-8"
+     inkscape:window-height="1137"
+     inkscape:window-x="1912"
      inkscape:window-y="-8"
      inkscape:window-maximized="1">
     <sodipodi:guide
@@ -107,8 +107,8 @@
        inkscape:rounded="0"
        inkscape:randomized="0"
        d="m 136.01382,110.58349 -61.013828,35.22635 -61.013832,-35.22635 0,-70.452703 L 74.999993,4.9044342 136.01383,40.130787 Z"
-       style="stroke-width:1.1251328"
-       transform="matrix(1,0,0,0.99357434,8.1848509e-6,0.08177052)" />
+       style="stroke-width:1.13227451"
+       transform="matrix(0.99369256,0,0,0.98730744,0.47306457,0.55402336)" />
     <path
        inkscape:connector-curvature="0"
        style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.65551883;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
