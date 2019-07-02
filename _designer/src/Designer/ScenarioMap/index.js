@@ -76,7 +76,7 @@ class ScenarioMap extends React.Component {
 
   render() {
     return (
-      <div className="hexgrid">
+      <div className="hexgrid" onWheel={this.props.onWheel}>
         <HexGrid viewBox="-30 -30 350 350">
           <Layout size={{ x: 16, y: 16 }}
                   spacing={1.05}

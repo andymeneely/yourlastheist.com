@@ -16,7 +16,7 @@ class Toolbox extends React.Component {
         />)
     }
     return (
-      <div className="tools">
+      <div className="tools" onWheel={this.props.onWheel}>
         <button onClick={() => this.props.onClearClick()}>Clear</button>
         <button onClick={() => this.props.onSaveClick()}>Save SVG</button>
         <label>

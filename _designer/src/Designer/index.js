@@ -4,6 +4,7 @@ import StatusBox from './StatusBox';
 import TextMap from './TextMap';
 import Toolbox from './Toolbox';
 import {decompressFromEncodedURIComponent as decompress} from 'lz-string';
+import tileTypes from '../tileTypes';
 
 class Designer extends React.Component {
   constructor(props) {
@@ -14,6 +15,7 @@ class Designer extends React.Component {
     this.handleSaveClick = this.handleSaveClick.bind(this);
     this.handleTypeClick = this.handleTypeClick.bind(this);
     this.handleShowGridClick = this.handleShowGridClick.bind(this);
+    this.onWheel = this.onWheel.bind(this);
   }
 
   initialState(){
@@ -85,6 +87,20 @@ class Designer extends React.Component {
     a.click();
   }
 
+  onWheel(e){ // cycle through tools
+    let codes = Object.keys(tileTypes);
+    let i = codes.indexOf(this.state.activeType);
+    if(e.deltaY > 0){
+      i++;
+    } else {
+      i--;
+    }
+    i = (i + codes.length ) % codes.length; // Wrap around 
+    this.setState({
+      activeType: codes[i]
+    });
+  }
+
   render() {
     return (
       <div className="designer">
@@ -93,12 +109,14 @@ class Designer extends React.Component {
                    onSaveClick={this.handleSaveClick}
                    onTypeClick={this.handleTypeClick}
                    onShowGridClick={this.handleShowGridClick}
+                   onWheel={this.onWheel}
                    showGrid={this.state.showGrid}
                    activeType={this.state.activeType}
           />
         </div>
         <div className="scenariomap">
           <ScenarioMap tiles={this.state.tiles}
+                       onWheel={this.onWheel}
                        onHexClick={this.handleHexClick}/>
         </div>
         <StatusBox tiles={this.state.tiles}/>
