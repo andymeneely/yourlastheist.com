@@ -86,8 +86,8 @@ class ScenarioMap extends React.Component {
   render() {
     return (
       <div className="hexgrid">
-        <HexGrid width={800}
-                 height={800}
+        <HexGrid width={600}
+                 height={600}
                  viewBox="-30 -30 350 350"
                  >
           <Layout size={{ x: 16, y: 16 }}
