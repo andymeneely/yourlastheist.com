@@ -39,7 +39,6 @@ class ScenarioMap extends React.Component {
   renderHexagon(hex, i) {
     const hex_code = this.props.tiles[i];
     const hex_type = tileTypes[hex_code];
-    console.log(this.props);
     var stroke_state = this.props.showGrid ? ' grid_show' : ' grid_hide';
     return (
       <Hexagon

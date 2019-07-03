@@ -27,7 +27,7 @@ button {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  height: 80vh;
+  height: 78vh;
   width: 100%;
 }
 
@@ -79,14 +79,12 @@ button {
 }
 
 .textmap{
-  font-family: Consolas, monaco, monospace;
-  font-size: 80%;
-  width: 30vh;
+  font-size: 75%;
 }
 
 .scenariomap svg {
   width: 98vh;
-  height: 85vh;
+  height: 80vh;
 }
 
 .hexgrid{
@@ -135,5 +133,4 @@ button {
   font-weight: bold;
   color: red;
   content: '✗';
-
 }
