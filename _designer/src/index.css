@@ -134,3 +134,35 @@ button {
   color: red;
   content: '✗';
 }
+
+.shift-tools{
+  margin-top: 0.5em;
+  padding-top: 0.5em;
+  text-align: center;
+}
+
+.shift-tools button {
+  margin-top: 0.15em;
+  margin-bottom: 0.15em;
+  padding: 0.5em;
+}
+
+.shift-tools button:nth-child(1) { /* up */
+   display: block;
+   margin-left: auto;
+   margin-right: auto;
+}
+
+.shift-tools button:nth-child(2) { /* up */
+  margin-right: 1em;
+}
+
+.shift-tools button:nth-child(3) { /* up */
+  margin-left: 1em;
+}
+
+.shift-tools button:nth-child(4) { /* down */
+   display: block;
+   margin-left: auto;
+   margin-right: auto;
+}

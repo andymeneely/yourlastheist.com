@@ -3,6 +3,7 @@ import ScenarioMap from './scenarioMap';
 import StatusBox from './statusBox';
 import TextMap from './textMap';
 import Toolbox from './toolbox';
+import ShiftTools from './shiftTools';
 import {decompressFromEncodedURIComponent as decompress} from 'lz-string';
 import tileTypes from './tileTypes';
 
@@ -15,6 +16,7 @@ class Designer extends React.Component {
     this.handleSaveClick = this.handleSaveClick.bind(this);
     this.handleTypeClick = this.handleTypeClick.bind(this);
     this.handleShowGridClick = this.handleShowGridClick.bind(this);
+    this.handleShiftClick = this.handleShiftClick.bind(this);
     this.onWheel = this.onWheel.bind(this);
   }
 
@@ -101,6 +103,45 @@ class Designer extends React.Component {
     });
   }
 
+  // handle shifting the entire board up or down
+  // We're assuming we have a square board with stride x stride rows/cols
+  handleShiftClick(dir){
+    let stride = Math.sqrt(this.state.tiles.length);
+    let len = this.state.tiles.length;
+    let tiles = this.state.tiles;
+    let sTiles = Array(len).fill('GP'); //s(hifted)Tiles
+    switch(dir){
+      case 'up':
+        for(let i = 0; i < len; i++){
+          sTiles[i] = tiles[(i + 2 * stride) % len];
+        }
+        break;
+      case 'down':
+        for(let i = 0; i < len; i++){
+          sTiles[i] = tiles[(i + 2 * stride * (stride - 1)) % len];
+        }
+        break;
+      case 'left':
+        for(let i = 0; i < len; i++){
+          let row = Math.floor(i / stride);
+          sTiles[i] = tiles[(i + stride + 1) % stride + row * stride ];
+        }
+        break;
+      case 'right':
+        for(let i = 0; i < len; i++){
+          let row = Math.floor(i / stride);
+          sTiles[i] = tiles[(i + stride - 1) % stride + row * stride ];
+        }
+        break;
+      default:
+        console.log(`ERROR! Shift click not recognized: ${dir}`)
+    }
+    console.log(sTiles);
+    this.setState({
+      tiles: sTiles
+    });
+  }
+
   render() {
     return (
       <div className="designer">
@@ -117,7 +158,10 @@ class Designer extends React.Component {
                        onWheel={this.onWheel}
                        showGrid={this.state.showGrid}
                        onHexClick={this.handleHexClick}/>
-          <StatusBox tiles={this.state.tiles}/>
+          <div className="columnBox">
+            <StatusBox tiles={this.state.tiles}/>
+            <ShiftTools onShiftClick={this.handleShiftClick}/>
+          </div>
         </div>
         <div className="bottomrow">
           <TextMap value={this.makeSaveString()}/>
