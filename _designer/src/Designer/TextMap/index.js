@@ -5,7 +5,7 @@ class TextMap extends React.Component {
   render() {
     let save_url = `http://localhost:3000?savekey=${compress(this.props.value)}`
     return (
-      <div>
+      <div className="textmap">
         <h1>Save string: </h1>
         <div>{this.props.value}</div>
         <h1>To recreate this map, use this URL</h1>

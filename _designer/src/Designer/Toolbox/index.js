@@ -16,19 +16,20 @@ class Toolbox extends React.Component {
         />)
     }
     return (
-      <div className="tools" onWheel={this.props.onWheel}>
+      <div className="toolbox">
+        <div className="tools" onWheel={this.props.onWheel}>
+          {hexbuttons}
+        </div>
         <button onClick={() => this.props.onClearClick()}>Clear</button>
         <button onClick={() => this.props.onSaveClick()}>Save SVG</button>
         <label>
-          <input
-              name="isGoing"
-              type="checkbox"
-              checked={this.props.showGrid}
-              onChange={this.props.onShowGridClick} />
-            Grid
+          <input name="isGoing"
+                 type="checkbox"
+                 checked={this.props.showGrid}
+                 onChange={this.props.onShowGridClick} />
+          Grid
         </label>
 
-        {hexbuttons}
     </div>
     );
   }

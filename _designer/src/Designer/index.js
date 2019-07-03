@@ -95,7 +95,7 @@ class Designer extends React.Component {
     } else {
       i--;
     }
-    i = (i + codes.length ) % codes.length; // Wrap around 
+    i = (i + codes.length ) % codes.length; // Wrap around
     this.setState({
       activeType: codes[i]
     });
@@ -120,9 +120,7 @@ class Designer extends React.Component {
                        onHexClick={this.handleHexClick}/>
         </div>
         <StatusBox tiles={this.state.tiles}/>
-        <div className="textmap">
-          <TextMap value={this.makeSaveString()}/>
-        </div>
+        <TextMap value={this.makeSaveString()}/>
       </div>
     );
   }
