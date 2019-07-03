@@ -1,3 +1,5 @@
+@import-normalize;
+
 body {
   font-size: 1.2em;
   font-family: 'Archivo Narrow', sans-serif;
@@ -18,11 +20,22 @@ button {
 .designer{
   margin-left: auto;
   margin-right: auto;
+  user-select: none;
+}
+
+.designer .toprow {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   height: 80vh;
   width: 100%;
+}
+
+.designer .bottomrow {
+  margin-top: 2em;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .toolbox {
@@ -50,17 +63,19 @@ button {
   background: none;
   /* border: 1px solid gray; */
   border: 3px solid white;
-  user-select: none;
   margin-bottom: 2px;
 }
 
 .toolbox button.hexbutton.active{
   border: 3px solid red;
-
 }
 
 .toolbox button.hexbutton img{
   width: 100%;
+}
+
+.toolbox>button{
+  margin: 0.25em;
 }
 
 .textmap{
@@ -69,8 +84,9 @@ button {
   width: 30vh;
 }
 
-.scenariomap{
-
+.scenariomap svg {
+  width: 98vh;
+  height: 85vh;
 }
 
 .hexgrid{
@@ -81,10 +97,15 @@ button {
 
 .grid_show .hexagon polygon {
   stroke: #ccc;
+  stroke-width: 0;
 }
 
 .grid_hide .hexagon polygon {
   stroke: #fff;
+}
+
+.grid_hide.hex-gap polygon {
+  fill: #fff;
 }
 
 /* Hack until the next react-grid comes out */

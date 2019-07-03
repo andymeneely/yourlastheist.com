@@ -68,7 +68,7 @@ class Designer extends React.Component {
 
   handleShowGridClick(){
     this.setState({
-      showGrid: !this.props.showGrid
+      showGrid: !this.state.showGrid
     });
   }
 
@@ -104,19 +104,24 @@ class Designer extends React.Component {
   render() {
     return (
       <div className="designer">
-        <Toolbox onClearClick={this.handleClearClick}
-                 onSaveClick={this.handleSaveClick}
-                 onTypeClick={this.handleTypeClick}
-                 onShowGridClick={this.handleShowGridClick}
-                 onWheel={this.onWheel}
-                 showGrid={this.state.showGrid}
-                 activeType={this.state.activeType}
-        />
-        <ScenarioMap tiles={this.state.tiles}
-                     onWheel={this.onWheel}
-                     onHexClick={this.handleHexClick}/>
-        <StatusBox tiles={this.state.tiles}/>
-        <TextMap value={this.makeSaveString()}/>
+        <div className="toprow">
+          <Toolbox onClearClick={this.handleClearClick}
+                   onSaveClick={this.handleSaveClick}
+                   onTypeClick={this.handleTypeClick}
+                   onShowGridClick={this.handleShowGridClick}
+                   onWheel={this.onWheel}
+                   showGrid={this.state.showGrid}
+                   activeType={this.state.activeType}
+          />
+          <ScenarioMap tiles={this.state.tiles}
+                       onWheel={this.onWheel}
+                       showGrid={this.state.showGrid}
+                       onHexClick={this.handleHexClick}/>
+          <StatusBox tiles={this.state.tiles}/>
+        </div>
+        <div className="bottomrow">
+          <TextMap value={this.makeSaveString()}/>
+        </div>
       </div>
     );
   }

@@ -39,6 +39,7 @@ class ScenarioMap extends React.Component {
   renderHexagon(hex, i) {
     const hex_code = this.props.tiles[i];
     const hex_type = tileTypes[hex_code];
+    console.log(this.props);
     var stroke_state = this.props.showGrid ? ' grid_show' : ' grid_hide';
     return (
       <Hexagon
@@ -78,8 +79,8 @@ class ScenarioMap extends React.Component {
     return (
       <div className="scenariomap">
         <div className="hexgrid" onWheel={this.props.onWheel}>
-          <HexGrid viewBox="-30 -30 350 350">
-            <Layout size={{ x: 16, y: 16 }}
+          <HexGrid viewBox="-15 -30 350 325">
+            <Layout size={{ x: 19, y: 19 }}
                     spacing={1.03}
                     flat={false}
                     origin={{x: 0, y: 0}}>
