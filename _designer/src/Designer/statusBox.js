@@ -1,5 +1,5 @@
 import React from 'react';
-import tileTypes from './tileTypes';
+import tileData from './tileData';
 
 class StatusBox extends React.Component {
 
@@ -142,7 +142,7 @@ class StatusBox extends React.Component {
 
   tallyUp(){
     let tallies = {};
-    for(let t in tileTypes) {
+    for(let t in tileData) {
       tallies[t] = 0;
     }
     for(let i in this.props.tiles) {

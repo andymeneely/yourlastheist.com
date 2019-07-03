@@ -43,7 +43,7 @@ button {
   overflow-y: auto;
   overflow-x: hidden;
   text-align: center;
-  width: 30vh;
+  width: 35vh;
 }
 
 .toolbox .tools{
@@ -53,7 +53,8 @@ button {
   justify-content: space-around;
 }
 
-.toolbox label {
+.toolbox label,
+.toolbox input {
   cursor: pointer;
 }
 
@@ -154,11 +155,11 @@ button {
 }
 
 .shift-tools button:nth-child(2) { /* up */
-  margin-right: 1em;
+  margin-right: 1.2em;
 }
 
 .shift-tools button:nth-child(3) { /* up */
-  margin-left: 1em;
+  margin-left: 1.2em;
 }
 
 .shift-tools button:nth-child(4) { /* down */

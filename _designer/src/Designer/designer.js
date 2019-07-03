@@ -5,7 +5,7 @@ import TextMap from './textMap';
 import Toolbox from './toolbox';
 import ShiftTools from './shiftTools';
 import {decompressFromEncodedURIComponent as decompress} from 'lz-string';
-import tileTypes from './tileTypes';
+import tileData from './tileData';
 
 class Designer extends React.Component {
   constructor(props) {
@@ -90,7 +90,7 @@ class Designer extends React.Component {
   }
 
   onWheel(e){ // cycle through tools
-    let codes = Object.keys(tileTypes);
+    let codes = Object.keys(tileData);
     let i = codes.indexOf(this.state.activeType);
     if(e.deltaY > 0){
       i++;

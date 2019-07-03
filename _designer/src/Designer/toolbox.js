@@ -1,16 +1,15 @@
 import React from 'react';
 import HexToolButton from './hexToolButton';
-import tileTypes from './tileTypes';
+import tileData from './tileData';
 
 class Toolbox extends React.Component {
   render() {
     var hexbuttons = [];
-    var typeMap = tileTypes;
-    for(var t in tileTypes) {
+    for(var t in tileData) {
       hexbuttons.push(
         <HexToolButton
            hexType={t}
-           svgurl={require('./img/hexart/' + typeMap[t] + '.svg')}
+           svgurl={require('./img/hexart/' + tileData[t]['slug'] + '.svg')}
            onHexButtonClick={this.props.onTypeClick}
            isActiveType={this.props.activeType === t}
         />)
