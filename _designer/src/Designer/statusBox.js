@@ -1,5 +1,5 @@
 import React from 'react';
-import tileTypes from '../../tileTypes';
+import tileTypes from './tileTypes';
 
 class StatusBox extends React.Component {
 

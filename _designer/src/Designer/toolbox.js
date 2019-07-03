@@ -1,6 +1,6 @@
 import React from 'react';
-import HexToolButton from '../HexToolButton';
-import tileTypes from '../../tileTypes';
+import HexToolButton from './hexToolButton';
+import tileTypes from './tileTypes';
 
 class Toolbox extends React.Component {
   render() {
@@ -10,7 +10,7 @@ class Toolbox extends React.Component {
       hexbuttons.push(
         <HexToolButton
            hexType={t}
-           svgurl={require('../img/hexart/' + typeMap[t] + '.svg')}
+           svgurl={require('./img/hexart/' + typeMap[t] + '.svg')}
            onHexButtonClick={this.props.onTypeClick}
            isActiveType={this.props.activeType === t}
         />)

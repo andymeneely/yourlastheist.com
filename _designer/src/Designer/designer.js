@@ -1,10 +1,10 @@
 import React from 'react';
-import ScenarioMap from './ScenarioMap';
-import StatusBox from './StatusBox';
-import TextMap from './TextMap';
-import Toolbox from './Toolbox';
+import ScenarioMap from './scenarioMap';
+import StatusBox from './statusBox';
+import TextMap from './textMap';
+import Toolbox from './toolbox';
 import {decompressFromEncodedURIComponent as decompress} from 'lz-string';
-import tileTypes from '../tileTypes';
+import tileTypes from './tileTypes';
 
 class Designer extends React.Component {
   constructor(props) {
@@ -104,21 +104,17 @@ class Designer extends React.Component {
   render() {
     return (
       <div className="designer">
-        <div className="toolbox">
-          <Toolbox onClearClick={this.handleClearClick}
-                   onSaveClick={this.handleSaveClick}
-                   onTypeClick={this.handleTypeClick}
-                   onShowGridClick={this.handleShowGridClick}
-                   onWheel={this.onWheel}
-                   showGrid={this.state.showGrid}
-                   activeType={this.state.activeType}
-          />
-        </div>
-        <div className="scenariomap">
-          <ScenarioMap tiles={this.state.tiles}
-                       onWheel={this.onWheel}
-                       onHexClick={this.handleHexClick}/>
-        </div>
+        <Toolbox onClearClick={this.handleClearClick}
+                 onSaveClick={this.handleSaveClick}
+                 onTypeClick={this.handleTypeClick}
+                 onShowGridClick={this.handleShowGridClick}
+                 onWheel={this.onWheel}
+                 showGrid={this.state.showGrid}
+                 activeType={this.state.activeType}
+        />
+        <ScenarioMap tiles={this.state.tiles}
+                     onWheel={this.onWheel}
+                     onHexClick={this.handleHexClick}/>
         <StatusBox tiles={this.state.tiles}/>
         <TextMap value={this.makeSaveString()}/>
       </div>

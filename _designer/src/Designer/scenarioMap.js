@@ -1,31 +1,31 @@
 import React from 'react';
 import { HexGrid, Layout, Hexagon, GridGenerator } from 'react-hexgrid';
-import tileTypes from '../../tileTypes';
+import tileTypes from './tileTypes';
 
 /* eslint import/no-webpack-loader-syntax: off */
 var tileIcons = {
-  "GP": require('!!raw-loader!../img/hexart/gap.svg'),
-  "EM": require('!!raw-loader!../img/hexart/empty.svg'),
-  "SC": require('!!raw-loader!../img/hexart/security.svg'),
-  "GU": require('!!raw-loader!../img/hexart/security-guard.svg'),
-  "LO": require('!!raw-loader!../img/hexart/security-lock.svg'),
-  "CM": require('!!raw-loader!../img/hexart/security-camera.svg'),
-  "JW": require('!!raw-loader!../img/hexart/jewel.svg'),
-  "$1": require('!!raw-loader!../img/hexart/1k.svg'),
-  "$2": require('!!raw-loader!../img/hexart/2k.svg'),
-  "$3": require('!!raw-loader!../img/hexart/3k.svg'),
-  "RE": require('!!raw-loader!../img/hexart/reinforcements.svg'),
-  "GA": require('!!raw-loader!../img/hexart/gate-a.svg'),
-  "GB": require('!!raw-loader!../img/hexart/gate-b.svg'),
-  "GC": require('!!raw-loader!../img/hexart/gate-c.svg'),
-  "GD": require('!!raw-loader!../img/hexart/gate-d.svg'),
-  "E1": require('!!raw-loader!../img/hexart/entrance-upper-right.svg'),
-  "E2": require('!!raw-loader!../img/hexart/entrance-right.svg'),
-  "E3": require('!!raw-loader!../img/hexart/entrance-lower-right.svg'),
-  "E4": require('!!raw-loader!../img/hexart/entrance-lower-left.svg'),
-  "E5": require('!!raw-loader!../img/hexart/entrance-left.svg'),
-  "E6": require('!!raw-loader!../img/hexart/entrance-upper-left.svg'),
-  "WT": require('!!raw-loader!../img/hexart/watchtower.svg'),
+  "GP": require('!!raw-loader!./img/hexart/gap.svg'),
+  "EM": require('!!raw-loader!./img/hexart/empty.svg'),
+  "SC": require('!!raw-loader!./img/hexart/security.svg'),
+  "GU": require('!!raw-loader!./img/hexart/security-guard.svg'),
+  "LO": require('!!raw-loader!./img/hexart/security-lock.svg'),
+  "CM": require('!!raw-loader!./img/hexart/security-camera.svg'),
+  "JW": require('!!raw-loader!./img/hexart/jewel.svg'),
+  "$1": require('!!raw-loader!./img/hexart/1k.svg'),
+  "$2": require('!!raw-loader!./img/hexart/2k.svg'),
+  "$3": require('!!raw-loader!./img/hexart/3k.svg'),
+  "RE": require('!!raw-loader!./img/hexart/reinforcements.svg'),
+  "GA": require('!!raw-loader!./img/hexart/gate-a.svg'),
+  "GB": require('!!raw-loader!./img/hexart/gate-b.svg'),
+  "GC": require('!!raw-loader!./img/hexart/gate-c.svg'),
+  "GD": require('!!raw-loader!./img/hexart/gate-d.svg'),
+  "E1": require('!!raw-loader!./img/hexart/entrance-upper-right.svg'),
+  "E2": require('!!raw-loader!./img/hexart/entrance-right.svg'),
+  "E3": require('!!raw-loader!./img/hexart/entrance-lower-right.svg'),
+  "E4": require('!!raw-loader!./img/hexart/entrance-lower-left.svg'),
+  "E5": require('!!raw-loader!./img/hexart/entrance-left.svg'),
+  "E6": require('!!raw-loader!./img/hexart/entrance-upper-left.svg'),
+  "WT": require('!!raw-loader!./img/hexart/watchtower.svg'),
 };
 
 class ScenarioMap extends React.Component {
