@@ -1,0 +1,159 @@
+@import-normalize;
+
+body {
+  font-size: 1.2em;
+  font-family: 'Archivo Narrow', sans-serif;
+  line-height: 1.2;
+  padding: 0;
+}
+
+h1{
+  font-family: 'Archivo Black', sans-serif;
+  text-align: center;
+  font-size: 3vh;
+}
+
+button {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+
+.designer{
+  user-select: none;
+  display: grid;
+  width: 100%;
+  height: 97vh;
+  grid-template-columns: [left-col] 1fr [middle-col] 4fr [right-col] 10em;
+  grid-template-rows: [main-row] auto;
+
+  .left-tools {
+    grid-column-start: left-col;
+    grid-column-end: left-col;
+    grid-row-start: main-row;
+    grid-row-end: footer-row;
+  }
+
+  .middle-area {
+    grid-column-start: middle-col;
+    grid-column-end: middle-col;
+    grid-row-start: main-row;
+    grid-row-end: main-row;
+  }
+
+  .right-tools {
+    grid-column-start: right-col;
+    grid-column-end: right-col;
+    grid-row-start: main-row;
+    grid-row-end: main-row;
+  }
+
+  .toolbox {
+    overflow: auto;
+
+    .tools{
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-around;
+    }
+
+    label, input, button {
+      cursor: pointer;
+    }
+
+    button.hexbutton{
+      width: 4em;
+      cursor: pointer;
+      background: none;
+      /* border: 1px solid gray; */
+      border: 3px solid white;
+      margin-bottom: 2px;
+      &.active{
+        border: 3px solid red;
+      }
+      img{
+        width: 100%;
+      }
+    }
+
+  }
+
+  .scenariomap {
+    svg {
+      width: 90%;
+      height: 80%;
+    }
+    .hexgrid{
+      border: 1pt solid black;
+      cursor: pointer;
+      pointer-events: visible;
+      text-align: center;
+    }
+    .grid_show .hexagon polygon {
+      stroke: #ccc;
+      stroke-width: 0;
+    }
+    .grid_hide .hexagon polygon {
+      stroke: #fff;
+    }
+    .grid_hide.hex-gap polygon {
+      fill: #fff;
+    }
+    .hexagon polygon:hover{
+      stroke: #c00;
+      stroke-width: 1px;
+    }
+  }
+
+  .statusbox {
+    padding-left: 0.5em;
+    padding-right: 1em;
+    .good::before{
+      font-weight: bold;
+      color: green;
+      content: '✓';
+      padding-right: 0.12em;
+    }
+    .bad::before {
+      font-weight: bold;
+      color: red;
+      content: '✗';
+    }
+  }
+
+  .shift-tools{
+    margin-top: 0.5em;
+    padding-top: 0.5em;
+    text-align: center;
+    button {
+      margin-top: 0.15em;
+      margin-bottom: 0.15em;
+      padding: 0.5em;
+    }
+    button:nth-child(1) { /* up */
+       display: block;
+       margin-left: auto;
+       margin-right: auto;
+    }
+    button:nth-child(2) { /* left */
+      margin-right: 1.2em;
+    }
+    button:nth-child(3) { /* right */
+      margin-left: 1.2em;
+    }
+    button:nth-child(4) { /* down */
+       display: block;
+       margin-left: auto;
+       margin-right: auto;
+    }
+  }
+
+  .textmap{
+    font-size: 75%;
+  }
+}
+
+.designer .toolbox>button{
+  margin: 0.25em;
+}

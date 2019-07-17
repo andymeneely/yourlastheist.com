@@ -145,26 +145,28 @@ class Designer extends React.Component {
   render() {
     return (
       <div className="designer">
-        <div className="toprow">
+        <div className="left-tools">
           <Toolbox onClearClick={this.handleClearClick}
                    onSaveClick={this.handleSaveClick}
                    onTypeClick={this.handleTypeClick}
                    onShowGridClick={this.handleShowGridClick}
                    onWheel={this.onWheel}
                    showGrid={this.state.showGrid}
-                   activeType={this.state.activeType}
-          />
+                   activeType={this.state.activeType}/>
+        </div>
+        <div className="middle-area">
           <ScenarioMap tiles={this.state.tiles}
                        onWheel={this.onWheel}
                        showGrid={this.state.showGrid}
                        onHexClick={this.handleHexClick}/>
-          <div className="columnBox">
-            <StatusBox tiles={this.state.tiles}/>
-            <ShiftTools onShiftClick={this.handleShiftClick}/>
-          </div>
-        </div>
-        <div className="bottomrow">
           <TextMap value={this.makeSaveString()}/>
+        </div>
+        <div className="right-tools">
+          <StatusBox tiles={this.state.tiles}/>
+          <ShiftTools onShiftClick={this.handleShiftClick}/>
+        </div>
+        <div className="footer">
+
         </div>
       </div>
     );
